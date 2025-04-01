@@ -8,9 +8,9 @@
 
 מציג שמוש בסיסי ב-React context
 
-* createContext - [App.jsx](useContext\src\App.jsx)
-* Context.Provider - [App.jsx](useContext\src\App.jsx)
-* useContext - [Component2.jsx](useContext\src\components\Component2.jsx)
+* יצירת context עם createContext - [App.jsx](useContext\src\App.jsx)
+* סיפוק הערך ל-context עם Context.Provider - [App.jsx](useContext\src\App.jsx)
+* קריאת ערך ה-context עם useContext - [Component2.jsx](useContext\src\components\Component2.jsx)
 
 ## תרגילים
 
