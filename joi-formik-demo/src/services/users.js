@@ -38,9 +38,8 @@ const deleteUser = async (id) => {
 
 const createUser = async (userData) => {
     const validationResult = newUserSchema.validate(userData)
-    console.log(validationResult)
-    if (validationResult.error.message) {
-        return validationResult.error.message
+    if (validationResult.error?.message) {
+        return validationResult
     }
 
     const response = await fetch(apiUrl, {
