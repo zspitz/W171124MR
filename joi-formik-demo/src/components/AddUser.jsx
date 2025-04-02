@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { createUser } from "../services/users"
-import { useFormik } from "formik"
-import { newUserSchema } from "../schemas/user"
-import ErrorBox from "./ErrorBox"
+import { useState } from 'react';
+import { createUser } from '../services/users';
+import { useFormik } from 'formik';
+import { newUserSchema } from '../schemas/user';
+import ErrorBox from './ErrorBox';
 
 const AddUser = () => {
     const formik = useFormik({
@@ -12,37 +12,37 @@ const AddUser = () => {
             foo: 'bar'
         },
         validate: (values) => {
-            const { error } = newUserSchema.validate(values, { abortEarly: false })
+            const { error } = newUserSchema.validate(values, { abortEarly: false });
             if (!error) {
-                return {}
+                return {};
             }
 
-            const errors = {}
+            const errors = {};
             error.details.forEach(detail => {
-                errors[detail.path[0]] = detail.message
-            })
-            return errors
+                errors[detail.path[0]] = detail.message;
+            });
+            return errors;
         },
         onSubmit: values => {
             const sendData = async () => {
-                let data
+                let data;
                 try {
-                    data = await createUser(values)
+                    data = await createUser(values);
                     if (data.error?.message) {
-                        setMsg(data.error.message)
+                        setMsg(data.error.message);
                     } else {
-                        setMsg('User created successfully')
+                        setMsg('User created successfully');
                     }
-                    console.log(data)
+                    console.log(data);
                 } catch (error) {
-                    setMsg(error.message)
+                    setMsg(error.message);
                 }
-            }
-            sendData()
+            };
+            sendData();
         }
-    })
+    });
 
-    const [msg, setMsg] = useState('')
+    const [msg, setMsg] = useState('');
 
     return (
         <>
@@ -58,7 +58,7 @@ const AddUser = () => {
             </form>
             <p>{msg}</p>
         </>
-    )
-}
+    );
+};
 
-export default AddUser
+export default AddUser;

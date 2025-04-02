@@ -1,15 +1,15 @@
-import { Outlet, Link, NavLink } from "react-router"
+import { Outlet, Link, NavLink } from 'react-router';
 
 const App = () => {
     const styleBuilder = ({ isActive }) => {
         return {
-            fontFamily: isActive ? "Arial Black" : "Comic Sans MS",
-        }
-    }
+            fontFamily: isActive ? 'Arial Black' : 'Comic Sans MS'
+        };
+    };
 
     return (
         <>
-            <nav style={{ display: "flex", gap: "1rem" }}>
+            <nav style={{ display: 'flex', gap: '1rem' }}>
                 <Link to="/">Home</Link>
                 <Link to="/products">Products</Link>
                 <Link to="/customers">Customers</Link>
@@ -21,7 +21,7 @@ const App = () => {
                 <Outlet />
             </main>
         </>
-    )
-}
+    );
+};
 
-export default App
+export default App;

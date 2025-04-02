@@ -1,6 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import stylisticJs from '@stylistic/eslint-plugin-js';
+import preferArrow from 'eslint-plugin-prefer-arrow';
+import stylistic from '@stylistic/eslint-plugin';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -8,7 +9,8 @@ export default [
     pluginJs.configs.recommended,
     {
         'plugins': {
-            '@stylistic/js': stylisticJs
+            'prefer-arrow': preferArrow,
+            'stylistic': stylistic
         },
         'rules': {
             'no-unused-vars': ['error', {
@@ -18,23 +20,39 @@ export default [
                 'ignoreRestSiblings': true,
                 'reportUsedIgnorePattern': false
             }],
+
+            'quotes': ['error', 'single'],
+            'semi': ['off'],
+            'comma-dangle': ['error', 'never'],
+            'curly': ['error', 'all'],
+            'prefer-arrow/prefer-arrow-functions': ['warn'],
             'no-empty': ['error', {
                 'allowEmptyCatch': true
             }],
-            '@stylistic/js/semi': ['error', 'always'],
-            '@stylistic/js/brace-style': ['error', '1tbs', {
+            'no-console': ['warn'],
+            'no-alert': ['warn'],
+            'no-debugger': ['warn'],
+
+            'stylistic/brace-style': ['error', '1tbs', {
                 allowSingleLine: true
             }],
-            '@stylistic/js/no-multiple-empty-lines': ['error', {
+            'stylistic/no-multiple-empty-lines': ['error', {
                 max: 1,
                 maxEOF: 0,
                 maxBOF: 0
             }],
-            '@stylistic/js/eol-last': ['error', 'always'],
-
-            'quotes': ['error', 'single'],
-            'comma-dangle': ['error', 'never'],
-            'curly': ['error', 'all']
+            'stylistic/eol-last': ['error', 'always'],
+            'stylistic/member-delimiter-style': ['error', {
+                multiline: {
+                    delimiter: 'none',
+                    requireLast: true
+                },
+                singleline: {
+                    delimiter: 'comma',
+                    requireLast: false
+                }
+            }],
+            'stylistic/semi': ['error', 'always']
         }
     }
 ];

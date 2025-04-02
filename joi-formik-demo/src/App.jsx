@@ -1,7 +1,7 @@
-import AddUser from "./components/AddUser"
+import AddUser from './components/AddUser';
 
 const App = () => {
-    return <AddUser />
-}
+    return <AddUser />;
+};
 
-export default App
+export default App;

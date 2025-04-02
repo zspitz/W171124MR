@@ -1,4 +1,4 @@
-import { newUserSchema } from "../schemas/user";
+import { newUserSchema } from '../schemas/user';
 
 const apiUrl = 'http://localhost:3000/users';
 
@@ -6,13 +6,13 @@ const getUsers = async () => {
     const response = await fetch(apiUrl);
     const data = await response.json();
     return data;
-}
+};
 
 const getUser = async (id) => {
     const response = await fetch(`${apiUrl}/${id}`);
     const data = await response.json();
     return data;
-}
+};
 
 const setIsAdmin = async (id, isAdmin) => {
     const response = await fetch(`${apiUrl}/${id}`, {
@@ -26,7 +26,7 @@ const setIsAdmin = async (id, isAdmin) => {
     });
     const data = await response.json();
     return data;
-}
+};
 
 const deleteUser = async (id) => {
     const response = await fetch(`${apiUrl}/${id}`, {
@@ -34,12 +34,12 @@ const deleteUser = async (id) => {
     });
     const data = await response.json();
     return data;
-}
+};
 
 const createUser = async (userData) => {
-    const validationResult = newUserSchema.validate(userData)
+    const validationResult = newUserSchema.validate(userData);
     if (validationResult.error?.message) {
-        return validationResult
+        return validationResult;
     }
 
     const response = await fetch(apiUrl, {
@@ -51,6 +51,6 @@ const createUser = async (userData) => {
     });
     const data = await response.json();
     return data;
-}
+};
 
-export { getUsers, getUser, setIsAdmin, deleteUser, createUser }
+export { getUsers, getUser, setIsAdmin, deleteUser, createUser };
