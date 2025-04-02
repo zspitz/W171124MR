@@ -30,29 +30,31 @@
 
 לדוגמא: 
 
-| URL | Component | נתונים |
+| URL | Component | נתונים - שליפה מהשרת בכתובת המתאימה |
 |--|--|--|
 | `/products` | `<Products />` | `/ap/products` - רשימת מוצרים |
 | `/products/5` | `<Product />` | `/api/products/5` - פרטים נרחבים עבור מוצר ספציפי |
 | `/customers` | `<Customers />` | `/ap/customers` - רשימת לקוחות |
 
-* [הגדרת נתיבים עם `createBrowserRouter` ו-`createRoutesFromElements`](react-router-demo/src/routes.jsx#L8). זה מאפשר שימוש ב-data APIs של גירסא 6.4 ומעלה (לא מופיע בדוגמת הקוד)  
+* [הגדרת נתיבים עם `createBrowserRouter` ו-`createRoutesFromElements`](react-router-demo/src/routes.jsx#L8)  
+  זה מאפשר שימוש ב-data APIs של גירסא 6.4 ומעלה (לא מופיע בדוגמת הקוד)  
   אבל אם אין שימוש ב-data APIs, [ניתן להשתמש ב-`BrowserRouter` ו-`Routes`](https://reactrouter.com/start/declarative/routing)
 * [ניתוב מקונן - מתחת לנתיב products יש גם נתיב products/:id](react-router-demo/src/routes.jsx#L15)
 * [פרמטרים של נתיב](react-router-demo/src/routes.jsx#L15)
 * [שמוש ב-`Link` ו-`NavLink`](react-router-demo/src/App.jsx#L13)
+* [שימוש ב-`<Outlet />` כדי לקבוע היכן ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
 
 ## תרגילים
 
 ### שמוש ב-context כדי לשלוט ב-theme
 
 * צרו אפליקציה שמגיבה לשינויי theme
-* יש ליצור navbar עם שתי קישורים, וקומפוננטה שינוי theme
-* יש ליור main עם קומפוננטה שמכילה p עם טקסט
+* יש ליצור קומפוננטה `NavBar`, שתכיל קומפוננטה ייעודית לשינוי theme
+* יש ליצור קומפוננטה `Main` שמכילה קומפוננטה נוספת, שהיא בתורה מכילה p עם טקסט
 * יש לאפשר שינוי theme (עם ערכים אפשריים dark ו-light)
-* ה-state יישמר ב-App.
-* גם ה-navbar וגם הקומפוננטה בתוך ה-main יגיבו לשינויי ה-theme.
-* אפשר להשתמש ב-prop של style בתוך כל קומפוננטה
+* ה-state יישמר ב-`App`.
+* גם ה-`NavBar` וגם הקומפוננטה בתוך ה-`Main` יגיבו לשינויי ה-theme.
+* אפשר להשתמש ב-prop של style בתוך כל קומפוננטה כדי לעצב. (לא נדרש עיצוב עם דברים יותר מורכבים כמו CSS Modules או Tailwind).
 
 היררכית הקומפוננטות:
 
