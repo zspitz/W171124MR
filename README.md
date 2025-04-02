@@ -20,7 +20,7 @@
 
 * ה-context יכול להכיל גם ערכים מחושבים מתוך משתני state או hooks אחרים שהוגדרו בתוך הקומפוננטה. לדומא: [אובייקט style נקבע ב-App.jsx](theme-demo/src/App.jsx#L9)
 * נעשה בו שימוש ב-[NavBar.jsx](theme-demo/src/components/NavBar.jsx#L6) וב-[TextContainer.jx](theme-demo/src/components/TextContainer.jsx#L5)
-* לא מונע את השימוש במשתנה-state `theme` בעצמו [כדי ליצור עיצוב נקודתי](theme-demo/src/components/NoteContainer.jsx#L7).
+* לא מונע את השימוש במשתנה-state של `theme` בעצמו [כדי ליצור עיצוב נקודתי](theme-demo/src/components/NoteContainer.jsx#L7).
 
 ### שמוש ב-React Router
 
