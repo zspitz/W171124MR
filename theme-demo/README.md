@@ -1,12 +1,5 @@
-# React + Vite
+# פתרון תרגיל - שמוש ב-context כדי לשלוט ב-theme
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ראה תרגיל ב-[README הראשי](../README.md#%D7%A9%D7%9E%D7%95%D7%A9-%D7%91-context-%D7%9B%D7%93%D7%99-%D7%9C%D7%A9%D7%9C%D7%95%D7%98-%D7%91-theme)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ותאור כמה תכונות נוספות ב-[README הראשי](../README.md#%D7%94%D7%A2%D7%91%D7%A8%D7%AA-%D7%A2%D7%A8%D7%9B%D7%99%D7%9D-%D7%9E%D7%97%D7%95%D7%A9%D7%91%D7%99%D7%9D-%D7%93%D7%A8%D7%9A-%D7%94-context).
