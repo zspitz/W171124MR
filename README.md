@@ -42,7 +42,7 @@
 * [ניתוב מקונן - מתחת לנתיב products יש גם נתיב products/:id](react-router-demo/src/routes.jsx#L15)
 * [ניתוב דינמי עם פרמטרים](react-router-demo/src/routes.jsx#L15)
 * [שמוש ב-`Link` ו-`NavLink`](react-router-demo/src/App.jsx#L13)
-* [שימוש ב-`<Outlet />` כדי לקבוע היכן ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
+* [שימוש ב-`<Outlet />` כדי לקבוע היכן בדף ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
 
 ## תרגילים
 
