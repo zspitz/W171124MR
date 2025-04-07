@@ -14,9 +14,9 @@
 
 ### העברת ערכים מחושבים דרך ה-context
 
-ניתן להעביר כל ערך דרך ה-context. או ריבוי ערכים, שזה בדרך כלל נעשה עם אובייקט.
+ניתן להעביר כל ערך דרך ה-context. כדי להעביר ריבוי ערכים, יש לעטוף באוקייט (או במערך, אבל פחות נפוץ).
 
-ניתן גם להעביר ערכים המחושבים ע"פ משתני state או תוצאות של hooks אחרים.
+ניתן גם להעביר ערכים המחושבים על סמך משתני state או תוצאות של hooks אחרים.
 
 * ה-context יכול להכיל גם ערכים מחושבים מתוך משתני state או hooks אחרים שהוגדרו בתוך הקומפוננטה. לדומא: [אובייקט style נקבע ב-App.jsx](theme-demo/src/App.jsx#L9)
 * נעשה בו שימוש ב-[NavBar.jsx](theme-demo/src/components/NavBar.jsx#L6) וב-[TextContainer.jx](theme-demo/src/components/TextContainer.jsx#L5)
@@ -26,7 +26,7 @@
 
 ספריית React Router מאפשרת הגדרת הקבלה בין רכיב נתיב מסויים וקומפוננטה מסויימת, דהיינו שנתיב `X` יביא לכך שקומפוננתטה `Y` תוצג.
 
-תכונה נוספת: מאז גירסא 6.4 מייצרת הקבלה נוספת: בין חלק הנתיב והקומפוננטה, לבין הנתונים הנדרשים עבור אותה קומפוננטה ([data APIs](https://reactrouter.com/start/data/data-loading)).
+תכונה נוספת: מאז גירסא 6.4 מאפשרת יצירת הקבלה נוספת: בין חלק הנתיב והקומפוננטה, לבין הנתונים הנדרשים עבור אותה קומפוננטה ([data APIs](https://reactrouter.com/start/data/data-loading)).
 
 לדוגמא: 
 
@@ -38,11 +38,11 @@
 
 * [הגדרת נתיבים עם `createBrowserRouter` ו-`createRoutesFromElements`](react-router-demo/src/routes.jsx#L8)  
   זה מאפשר שימוש ב-data APIs של גירסא 6.4 ומעלה (לא מופיע בדוגמת הקוד)  
-  אבל אם אין שימוש ב-data APIs, [ניתן להשתמש ב-`BrowserRouter` ו-`Routes`](https://reactrouter.com/start/declarative/routing)
+  אבל אם לא מתשמשים ב-data APIs, [ניתן להשתמש ב-`BrowserRouter` ו-`Routes`](https://reactrouter.com/start/declarative/routing)
 * [ניתוב מקונן - מתחת לנתיב products יש גם נתיב products/:id](react-router-demo/src/routes.jsx#L15)
-* [פרמטרים של נתיב](react-router-demo/src/routes.jsx#L15)
+* [ניתוב דינמי עם פרמטרים](react-router-demo/src/routes.jsx#L15)
 * [שמוש ב-`Link` ו-`NavLink`](react-router-demo/src/App.jsx#L13)
-* [שימוש ב-`<Outlet />` כדי לקבוע היכן ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
+* [שימוש ב-`<Outlet />` כדי לקבוע היכן בדף ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
 
 ## תרגילים
 
