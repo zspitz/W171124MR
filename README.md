@@ -26,7 +26,7 @@
 
 ספריית React Router מאפשרת הגדרת הקבלה בין רכיב נתיב מסויים וקומפוננטה מסויימת, דהיינו שנתיב x יביא לכ שקומפוננתטה y תוצגת.
 
-תכונה נוספת: מאז גירסא 6.4 מייצרת הקבלה נוספת: בין חלק הנתיב והקומפוננטה, לבין הנתונים הנדרשים עבור אותה קומפוננטה ([data APIs](https://reactrouter.com/start/data/data-loading)).
+תכונה נוספת: מאז גירסא 6.4 מאפשרת יצירת הקבלה נוספת: בין חלק הנתיב והקומפוננטה, לבין הנתונים הנדרשים עבור אותה קומפוננטה ([data APIs](https://reactrouter.com/start/data/data-loading)).
 
 לדוגמא: 
 
@@ -38,9 +38,9 @@
 
 * [הגדרת נתיבים עם `createBrowserRouter` ו-`createRoutesFromElements`](react-router-demo/src/routes.jsx#L8)  
   זה מאפשר שימוש ב-data APIs של גירסא 6.4 ומעלה (לא מופיע בדוגמת הקוד)  
-  אבל אם אין שימוש ב-data APIs, [ניתן להשתמש ב-`BrowserRouter` ו-`Routes`](https://reactrouter.com/start/declarative/routing)
+  אבל אם לא מתשמשים ב-data APIs, [ניתן להשתמש ב-`BrowserRouter` ו-`Routes`](https://reactrouter.com/start/declarative/routing)
 * [ניתוב מקונן - מתחת לנתיב products יש גם נתיב products/:id](react-router-demo/src/routes.jsx#L15)
-* [פרמטרים של נתיב](react-router-demo/src/routes.jsx#L15)
+* [ניתוב דינמי עם פרמטרים](react-router-demo/src/routes.jsx#L15)
 * [שמוש ב-`Link` ו-`NavLink`](react-router-demo/src/App.jsx#L13)
 * [שימוש ב-`<Outlet />` כדי לקבוע היכן ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
 
