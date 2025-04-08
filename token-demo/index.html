@@ -16,41 +16,35 @@
     <hr />
     <button id="logout">Logout</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         const loginUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login'
         const allUsersUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users'
         const tokenKey = 'token'
 
         document.querySelector('#login').addEventListener('click', async () => {
-            const r = await fetch(loginUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
+            try {
+                const r = await axios.post(loginUrl, {
                     email: document.querySelector('#email').value,
                     password: document.querySelector('#password').value
-                })
-            });
-            const data = await r.text();
-            if (r.ok) {
-                localStorage.setItem(tokenKey, data);
-            } else {
+                });
+                localStorage.setItem(tokenKey, r.data);
+            } catch (error) {
                 localStorage.removeItem(tokenKey);
             }
         })
 
         document.querySelector('#getUsers').addEventListener('click', async () => {
-            const r = await fetch(allUsersUrl, {
-                headers: {
-                    'x-auth-token': localStorage.getItem(tokenKey)
-                }
-            })
-            const data = await r.text();
-            if (r.ok) {
-                console.log('Users fetched successfully!', JSON.parse(data));
-            } else {
-                console.error('Failed to fetch users:', data);
+            let r
+            try {
+                r = await axios.get(allUsersUrl, {
+                    headers: {
+                        'x-auth-token': localStorage.getItem(tokenKey)
+                    }
+                });
+                console.log('Users fetched successfully!', r.data);
+            } catch (error) {
+                console.error(error.message, error.response.data);
             }
         });
 
