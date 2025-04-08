@@ -55,10 +55,11 @@
 
 ### אינטרקציה בין token ו-localStorage
 
-* משלוח בקשת login לשרת monkfish
-* בהנתן והבקשה הצליחה, שמירת ה-token ב-localStorage
-* שימוש ב-token השמור ב-localStorage כדי לבצע בקשה נוספת
-* פעולת ניתוק - הסרת ה-token מה-localStorage
+* [משלוח בקשת login לשרת monkfish](token-demo/index.html#L27)
+* [בהנתן והבקשה הצליחה, שמירת ה-token ב-localStorage](token-demo/index.html#L31)
+* [שימוש ב-token השמור ב-localStorage כדי לבצע בקשה נוספת](token-demo/index.html#L42)
+* [פעולת ניתוק - הסרת ה-token מה-localStorage](token-demo/index.html#L53)
+* שמוש בסיסי ב-axios
 
 ## תרגילים
 
