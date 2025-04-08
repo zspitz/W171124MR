@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+    <button id="getUsers">Get Users</button>
+
+    <script>
+        const loginUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login'
+        const allUsersUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users'
+
+        document.querySelector('#login').addEventListener('click', async () => {
+            const r = await fetch(loginUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: 'admin@gmail.com',
+                    password: 'Abc!123Abc'
+                })
+            });
+            const data = await r.text();
+            if (r.ok) {
+                localStorage.setItem('token', data);
+            } else {
+                localStorage.removeItem('token');
+            }
+        })
+
+        document.querySelector('#getUsers').addEventListener('click', async () => {
+            const r = await fetch(allUsersUrl, {
+                headers: {
+                    'x-auth-token': localStorage.getItem('token')
+                }
+            })
+            const data = await r.text();
+            if (r.ok) {
+                console.log('Users fetched successfully!', JSON.parse(data));
+            } else {
+                console.error('Failed to fetch users:', data);
+            }
+        })
+    </script>
+</body>
+
+</html>
