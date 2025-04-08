@@ -1,7 +1,5 @@
 # דוגמאות קוד ותרגילים לתרגול ליווי פרוייקט W171124MR
 
-תאריך: 1.4.2025
-
 ## דוגמאות קוד
 
 ### קונטקס בסיסי - useContext
@@ -54,6 +52,13 @@
 * [שימוש ב-`Formik`, `Field`, `ErrorMessage` ו-`Form`](joi-formik-demo/src/AddUser.jsx#L60) (Formik)
 * [עדכון משתנה state כל פעם שיש בעיה בוולידציה](joi-formik-demo/src/components/AddUser.jsx#L21). נצרך כשיש שגיאה בכל האובייקט, לעומת `<ErrorMessage />` שמטבל רק במאפיין אחד
 * [מיפוי שגיאות ולידציה מ-Joi ל-Formik](joi-formik-demo/src/components/AddUser.jsx#L27)
+
+### אינטרקציה בין token ו-localStorage
+
+* משלוח בקשת login לשרת monkfish
+* בהנתן והבקשה הצליחה, שמירת ה-token ב-localStorage
+* שימוש ב-token השמור ב-localStorage כדי לבצע בקשה נוספת
+* פעולת ניתוק - הסרת ה-token מה-localStorage
 
 ## תרגילים
 

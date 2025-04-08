@@ -8,13 +8,18 @@
 </head>
 
 <body>
+    <input type="text" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
     <button id="login">Login</button>
-    <button id="logout">Logout</button>
+    <hr />
     <button id="getUsers">Get Users</button>
+    <hr />
+    <button id="logout">Logout</button>
 
     <script>
         const loginUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login'
         const allUsersUrl = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users'
+        const tokenKey = 'token'
 
         document.querySelector('#login').addEventListener('click', async () => {
             const r = await fetch(loginUrl, {
@@ -23,22 +28,22 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    email: 'admin@gmail.com',
-                    password: 'Abc!123Abc'
+                    email: document.querySelector('#email').value,
+                    password: document.querySelector('#password').value
                 })
             });
             const data = await r.text();
             if (r.ok) {
-                localStorage.setItem('token', data);
+                localStorage.setItem(tokenKey, data);
             } else {
-                localStorage.removeItem('token');
+                localStorage.removeItem(tokenKey);
             }
         })
 
         document.querySelector('#getUsers').addEventListener('click', async () => {
             const r = await fetch(allUsersUrl, {
                 headers: {
-                    'x-auth-token': localStorage.getItem('token')
+                    'x-auth-token': localStorage.getItem(tokenKey)
                 }
             })
             const data = await r.text();
@@ -47,7 +52,12 @@
             } else {
                 console.error('Failed to fetch users:', data);
             }
-        })
+        });
+
+        document.querySelector('#logout').addEventListener(
+            'click',
+            () => localStorage.removeItem(tokenKey)
+        )
     </script>
 </body>
 
