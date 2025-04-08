@@ -44,6 +44,17 @@
 * [שמוש ב-`Link` ו-`NavLink`](react-router-demo/src/App.jsx#L13)
 * [שימוש ב-`<Outlet />` כדי לקבוע היכן בדף ימוקם התוכן הדינמי שיספק React Router על סמך הנתיב](react-router-demo/src/App.jsx#L21)
 
+## שימוש ב-Joi כדי לבצע ולידציה ו-Formik
+
+ספריית Joi מאפשרת הגדרת כללים לצורה הנכונה של נתונים, ומאפשרת בדיקת נתונים מול אותם כללים, כולל פירוט מדויק של היכן הכללים לא התקיימו.
+
+ספריית Formik חוסכת הרבה מהבלגן של עבודה עם טפסים ב-React: יצירת ריבוי משתני state עבור כל נתון ו-input, חיבור אירועים של ה-input לעדכון ה-state ולבדיקת ולדיציה, ועוד.
+
+* [בניית ה-schema](joi-formik-demo/src/schemas/user.js) (Joi)
+* [שימוש ב-`Formik`, `Field`, `ErrorMessage` ו-`Form`](joi-formik-demo/src/AddUser.jsx#L60) (Formik)
+* [עדכון משתנה state כל פעם שיש בעיה בוולידציה](joi-formik-demo/src/components/AddUser.jsx#L21). נצרך כשיש שגיאה בכל האובייקט, לעומת `<ErrorMessage />` שמטבל רק במאפיין אחד
+* [מיפוי שגיאות ולידציה מ-Joi ל-Formik](joi-formik-demo/src/components/AddUser.jsx#L27)
+
 ## תרגילים
 
 ### שמוש ב-context כדי לשלוט ב-theme
