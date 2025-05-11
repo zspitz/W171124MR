@@ -1,0 +1,19 @@
+### Get welcome message
+GET http://localhost:3000/
+Accept: application/json
+
+### Get status
+GET http://localhost:3000/status
+Accept: application/json
+
+### Post to echo endpoint
+POST http://localhost:3000/echo
+Content-Type: application/json
+
+{
+  "message": "Hello from REST Client",
+  "number": 42
+}
+
+### Get error endpoint
+GET http://localhost:3000/error
