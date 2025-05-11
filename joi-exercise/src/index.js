@@ -43,6 +43,22 @@ const printValudation = (ob) => {
 }
 
 printValudation(valid1);
+// ouput: Validation successful
+
 printValudation(valid2);
+// ouput: Validation successful
+
 printValudation(invalid1);
+/*output:
+Validation failed:
+"street" length must be at least 5 characters long
+"city" with value "L0s Angeles" fails to match the required pattern: /^[A-Za-z\s]+$/
+"state" length must be 2 characters long
+"zip" with value "9000" fails to match the required pattern: /^\d{5}(-\d{4})?$/
+*/
+
 printValudation(invalid2);
+/*output:
+Validation failed:
+"zip" with value "3310A" fails to match the required pattern: /^\d{5}(-\d{4})?$/
+*/
