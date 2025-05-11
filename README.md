@@ -107,3 +107,5 @@ App
 | `GET` | `/status` | Returns a status object with a `status` property of `"ok"` and a `timestamp` property of the current date/time in ISO string format |
 | `POST` | `/echo` | Returns the body sent in with the request |
 | `GET` | `/error` | Throws an error; endpoint should return an error status code, and an object with an `error` property containing the error message. |
+| `GET` | `/car/:id` | The `id` must be either `1`, `4`, or `15`. The endpoint will return a success string if the `id` is one of these. Otherwise it will return `404` and an error message |
+| `POST` | `/car/:id` | The `id` must be either `1`, `4`, or `15`. The endpoint will return a success string if the `id` is one of these. Otherwise it will return `404` and an error message.<br />Also, verify that the received body is an object. |
