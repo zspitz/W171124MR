@@ -1,5 +1,6 @@
 import Joi from 'joi';
 
+// TODO write the schema
 const addressSchema = Joi.object({})
 
 const valid1 = {
@@ -31,6 +32,7 @@ const invalid2 = {
     zip: '3310A'
 }
 
+// TODO write the validation function
 const printValudation = (ob) => {
     const result = addressSchema.validate(ob);
     if (true) {
