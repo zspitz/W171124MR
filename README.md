@@ -96,3 +96,14 @@ App
   לדוגמא, אם המשתמש יבחר בשקלים, דולרים, ופראנק, המחירים יוצגו בכל המטבעות הללו.  
   כמובן שצריך לאפשר שליטה על השער עבור כל מטבע.  
   (המטבע הבסיסי ישאר הדולר)  
+
+### שרת Express פשוט
+
+צרו שרת Express עם ה-endpoints הבאים:
+
+| Method | Enpdpoint | Action |
+| -- | -- | -- |
+| `GET` | `/` | Returns `"Welcome to the Express server"` |
+| `GET` | `/status` | Returns a status object with a `status` property of `"ok"` and a `timestamp` property of the current date/time in ISO string format |
+| `POST` | `/echo` | Returns the body sent in with the request |
+| `GET` | `/error` | Throws an error; should return an error status code |
