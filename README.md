@@ -106,4 +106,4 @@ App
 | `GET` | `/` | Returns `"Welcome to the Express server"` |
 | `GET` | `/status` | Returns a status object with a `status` property of `"ok"` and a `timestamp` property of the current date/time in ISO string format |
 | `POST` | `/echo` | Returns the body sent in with the request |
-| `GET` | `/error` | Throws an error; should return an error status code |
+| `GET` | `/error` | Throws an error; endpoint should return an error status code, and an object with an `error` property containing the error message. |
